@@ -5,7 +5,7 @@ const Navbar = styled.div`
   position: absolute;
   width: 90%;
   height: 60px;
-  background-color: #00000014;
+  background-color: #64646414;
   display: flex;
   justify-content: space-between;
   padding: 0 5%;
@@ -26,9 +26,10 @@ const LogoBox = styled.div`
 const NavMenu = styled.div`
   width: 100px;
   margin: 0 10px;
-  font-family:var(--font-Roboto-Medium);
+  font-family:var(--font-Roboto-Regular);
   font-size: 1.3rem;
   text-align: center;
+  color: white;
 `
 function Nav() {
   return (
