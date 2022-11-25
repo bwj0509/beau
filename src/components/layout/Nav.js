@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 const Navbar = styled.div`
   position: absolute;
@@ -10,6 +11,10 @@ const Navbar = styled.div`
   justify-content: space-between;
   padding: 0 5%;
   z-index: 2;
+  &:hover{
+    background-color: #000000e3;
+  }
+  transition: all 100ms ease-in;
 `
 const NavBox = styled.div`
   width: ${props => props.width ? `${props.width}px` : '200px'};
@@ -35,11 +40,21 @@ function Nav() {
   return (
     <Navbar>
       <NavBox width={800}>
-        <LogoBox>Beau</LogoBox>
-        <NavMenu>Man</NavMenu>
-        <NavMenu>Woman</NavMenu>
-        <NavMenu>Jewel</NavMenu>
-        <NavMenu>Enterprise</NavMenu>
+        <Link to='/' style={{ textDecoration: 'none' }}>
+          <LogoBox>Beau</LogoBox>
+        </Link>
+        <Link to='/man' style={{ textDecoration: 'none' }}>
+          <NavMenu>Man</NavMenu>
+        </Link>
+        <Link to='/woman' style={{ textDecoration: 'none' }}>
+          <NavMenu>Woman</NavMenu>
+        </Link>
+        <Link to='/jewel' style={{ textDecoration: 'none' }}>
+          <NavMenu>jewel</NavMenu>
+        </Link>
+        <Link to='/enterprisen' style={{ textDecoration: 'none' }}>
+          <NavMenu>enterprise</NavMenu>
+        </Link>
       </NavBox>
       <NavBox width={100}>
         <div>LOGIN</div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
@@ -11,12 +12,14 @@ import main1 from '../../img/main1.jpg';
 import main2 from '../../img/main2.jpg';
 import main3 from '../../img/main3.jpg';
 import main4 from '../../img/main4.jpg';
+import main5 from '../../img/main5.jpg'
+import gif1 from '../../img/gif1.gif'
 
-const SwiperImgWrapper = styled.div`
+const SwiperImgWrapper = styled(motion.div)`
     width: 100%;
     height: 1000px;
 `
-const Left = styled.div`
+const Left = styled(motion.div)`
   width: 50%;
   height: 100%;
   background: url(${props => props.img});
@@ -35,10 +38,11 @@ const Right = styled.div`
   align-items: center;
   position: relative;
   background-color: #f4f4f4;
+  transition-delay: 1000ms;
 `
 function SwiperImg() {
   return (
-    <SwiperImgWrapper>
+    <SwiperImgWrapper initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} >
       <Swiper
         direction={"vertical"}
         pagination={{
@@ -46,14 +50,14 @@ function SwiperImg() {
         }}
         loop={true}
         modules={[Pagination, Autoplay]}
-        // autoplay={{
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         className="mySwiper"
       >
         <SwiperSlide>
-          <Left img={main1}>
+          <Left img={main1} whileFocus={{ scale: 1.2 }}>
             <div style={{ color: 'white', marginRight: '30px' }}>BLACK</div>
           </Left>
           <Right>
@@ -66,8 +70,17 @@ function SwiperImg() {
             <div style={{ color: 'white', marginRight: '30px' }}>SUN</div>
           </Left>
           <Right>
-            <div style={{ color: 'rgb(118 6 5)', marginLeft: '30px', position: 'absolute' }}>EYE</div>
+            <div style={{ color: 'rgb(185 116 2)', marginLeft: '30px', position: 'absolute' }}>EYE</div>
             <div style={{ width: '70%', height: '50%', margin: 'auto', background: `url(${main4})`, backgroundSize: 'cover' }}></div>
+          </Right>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Left img={main5}>
+            <div style={{ color: '#5a0000', marginRight: '30px' }}>SUN</div>
+          </Left>
+          <Right>
+            <div style={{ color: 'rgb(201 201 201)', marginLeft: '30px', position: 'absolute' }}>EYE</div>
+            <div style={{ width: '40%', height: '38%', margin: 'auto', background: `url(${gif1})`, backgroundSize: 'contain', borderRadius: '5px 5px 70% 5px' }}></div>
           </Right>
         </SwiperSlide>
       </Swiper>
