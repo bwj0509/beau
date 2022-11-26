@@ -22,11 +22,15 @@ const ImgWarpper = styled(motion.div)`
 
 `
 
-
 const Title = styled.div`
     color:#eeedef;
     font-size: 4vw;
     border-bottom: 0.5vw solid #b3a89d;
+`
+
+const GridTitle = styled.div`
+    margin: 10px;
+    color:#999999
 `
 
 
@@ -43,6 +47,7 @@ function topic() {
             </ImgWarpper>
 
             <Grid fluid>
+                <GridTitle>남성 | 코트</GridTitle>
                 <Row>
                     {dumydata.map((item) => (
                         <Col xs={6} md={3} style={{ padding: '0px' }}>

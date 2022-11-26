@@ -79,7 +79,7 @@ function SwiperImg() {
             <div style={{ color: '#5a0000', marginRight: '30px' }}>SUN</div>
           </Left>
           <Right>
-            <div style={{ color: 'rgb(201 201 201)', marginLeft: '30px', position: 'absolute' }}>EYE</div>
+            <div style={{ color: 'rgb(201 201 201)', marginLeft: '30px', position: 'absolute' }}>DARK</div>
             <div style={{ width: '40%', height: '38%', margin: 'auto', background: `url(${gif1})`, backgroundSize: 'contain', borderRadius: '5px 5px 70% 5px' }}></div>
           </Right>
         </SwiperSlide>
